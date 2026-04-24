@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_RAW_BASE="https://raw.githubusercontent.com/Korplin/LinuxDevPlatformBootstrap/main"
+REPO_RAW_BASE="https://raw.githubusercontent.com/Korplin/LinuxDevPlatformBootstrap3/main"
 PLAYBOOK_URL="${REPO_RAW_BASE}/devplatform.yml"
 PLAYBOOK_PATH="/tmp/devplatform.yml"
 
