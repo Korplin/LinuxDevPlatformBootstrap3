@@ -84,35 +84,6 @@
   # ============================================================================
   tasks:
 
-    # ==========================================================================
-    # SSH HARDENING AND RESTART
-    # ==========================================================================
-
-    - name: "[SSH] Ensure OpenSSH server and config directory exist"
-      ansible.builtin.apt:
-        name: openssh-server
-        state: present
-        update_cache: true
-
-    - name: "[SSH] Ensure sshd config drop-in directory exists"
-      ansible.builtin.file:
-        path: /etc/ssh/sshd_config.d
-        state: directory
-        owner: root
-        group: root
-        mode: "0755"
-
-    - name: "[SSH] Write sshd hardening config"
-      ansible.builtin.copy:
-        dest: /etc/ssh/sshd_config.d/devplatform.conf
-        owner: root
-        group: root
-        mode: "0644"
-        content: |
-          PermitRootLogin no
-          PasswordAuthentication no
-          X11Forwarding no
-      notify: Restart ssh
 
 
     # ==========================================================================
